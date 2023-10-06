@@ -79,7 +79,7 @@ window.addEventListener("load", () => {
   if (!localStorage.getItem("products")) {
     localStorage.setItem("products", JSON.stringify(initialProducts));
   }
-  if (location.pathname === "/home.html") {
+  if (location.pathname === "/index.html") {
     homePage();
   }
   if (location.pathname === "/admin/index.html") {
@@ -98,7 +98,7 @@ window.addEventListener("load", () => {
   }
 
   if (
-    location.pathname === "/home.html" ||
+    location.pathname === "/index.html" ||
     location.pathname === "/PageHTML/order.html" ||
     location.pathname === "/PageHTML/cart.html"
   ) {
@@ -154,10 +154,10 @@ const signIn = () => {
   }
   sessionStorage.setItem("userId", loggedUser.id);
   errorRef.innerText = "";
-  //location.replace("/PageHTML/home.html");
+  //location.replace("/PageHTML/index.html");
   if (emailRef.value === "gnaneshg@admin.com" && passwordRef.value === "admin")
     location.replace("/admin/index.html");
-  else location.replace("/home.html");
+  else location.replace("/index.html");
 };
 const validateEmail = (email) => {
   let regex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -415,9 +415,9 @@ const checkOut = () => {
       localStorage.setItem("cart", JSON.stringify(otherUserCart));
       localStorage.setItem("orders", JSON.stringify(orders));
       addingCartCount();
-      location.href = "/home.html";
+      location.href = "/index.html";
     } else {
-      location.href = "/home.html";
+      location.href = "/index.html";
     }
   } else {
     location.href = "/PageHTML/login.html";
@@ -456,7 +456,7 @@ const orderPage = () => {
       }
       tableRef.innerHTML = body;
     } else {
-      location.href = "/home.html";
+      location.href = "/index.html";
     }
   } else {
     location.href = "/PageHTML/login.html";
@@ -519,7 +519,7 @@ const adminOrderPage = () => {
         });
       }
     } else {
-      location.href = "/home.html";
+      location.href = "/index.html";
     }
   } else {
     location.href = "/PageHTML/login.html";
